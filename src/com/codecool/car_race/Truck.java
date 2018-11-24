@@ -2,12 +2,33 @@ package com.codecool.car_race;
 import java.util.Random;
 
 public class Truck implements Vehicle {
-    String name;
-    int distanceTraveled = 0;
-    int speed = 100;
-    Random random = new Random();
-    int breakDownTurnsLeft = 0;
-    String type = "truck";
+    @Override
+    public int getDistanceTraveled() {
+        return distanceTraveled;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+    int getBreakDownTurnsLeft() {
+        return breakDownTurnsLeft;
+    }
+
+
+    private String name;
+    private int distanceTraveled = 0;
+    private int speed = 100;
+
+    private Random random = new Random();
+
+    private int breakDownTurnsLeft = 0;
+    private String type = "truck";
     Truck(){
 
         name = String.valueOf(random.nextInt(1001));

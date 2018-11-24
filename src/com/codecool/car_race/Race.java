@@ -2,38 +2,44 @@ package com.codecool.car_race;
 
 import java.util.List;
 
-public class Race {
-    Race race = new Race();
-   List<Vehicle> vehicles;
+ class Race {
 
-    void createVechicles(){
-        for(int i = 1; i <= 10; i++){
-            vehicles.add(new Car());
-            vehicles.add(new Truck());
-            vehicles.add(new Motorcycle());
-        }
-
-    }
-    boolean isThereABrokenDownTruck(){
-        for(Vehicle vehicle : vehicles){
-            if(vehicle instanceof Truck && ((Truck) vehicle).breakDownTurnsLeft > 2){
+    boolean isThereABrokenDownTruck(List<Vehicle> vehicles){
+        for(Vehicle vehicle: vehicles){
+            if(vehicle instanceof Truck && ((Truck) vehicle).getBreakDownTurnsLeft() > 0){
                 return true;
             }
         }
         return false;
     }
-    void simulateRace(){
+
+
+    void simulateRace(List<Vehicle> vehicles, Race race){
         Weather.setRaining();
-        for(int i = 1; i <= 50; i++){
-            for(Vehicle vehicle : vehicles){
-                vehicle.moveForAnHour(race);
+        for(int i = 0; i <= 49; i++){
+            for(int j = 0; j<= 29; j++){
+                vehicles.get(j).moveForAnHour(race);
             }
+
+
+
         }
     }
 
-    void printRaceResults(){
+    void printResults(List<Vehicle> vehicles){
+        System.out.println("rain: " + Weather.raining);
+        System.out.println("Result:");
+        for(Vehicle vehicle: vehicles){
+            System.out.println("Type: " + vehicle.getType());
+            System.out.println("Name: " + vehicle.getName());
+            System.out.println("Distance Traveled: " + vehicle.getDistanceTraveled());
+        }
+
+
+        }
 
     }
 
 
-}
+
+

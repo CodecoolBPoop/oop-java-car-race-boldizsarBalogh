@@ -1,12 +1,30 @@
 package com.codecool.car_race;
 import java.util.Random;
 
+
+
 public class Car implements Vehicle {
-    String name;
-    int distanceTraveled = 0;
-    int speed;
-    String type = "car";
-    String[] carNames = {
+    @Override
+    public int getDistanceTraveled() {
+        return distanceTraveled;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+
+    private String name;
+    private int distanceTraveled = 0;
+    private int speed;
+    private String type = "car";
+    private String[] carNames = {
             "Purity",
             "Pinnacle",
             "Resolve",
@@ -27,7 +45,8 @@ public class Car implements Vehicle {
 
     @Override
     public void moveForAnHour(Race race) {
-        if(race.isThereABrokenDownTruck()){
+
+        if(race.isThereABrokenDownTruck(Main.vehicles)){
             distanceTraveled += 75;
         }else{
             distanceTraveled += speed;
