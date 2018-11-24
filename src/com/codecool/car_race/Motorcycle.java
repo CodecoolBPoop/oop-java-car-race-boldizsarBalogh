@@ -1,28 +1,13 @@
 package com.codecool.car_race;
 import java.util.Random;
 
-public class Motorcycle implements Vehicle {
-    @Override
-    public int getDistanceTraveled() {
-        return distanceTraveled;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getType() {
-        return type;
-    }
+public class Motorcycle extends Vehicle {
     private static int nameNumber = 0;
-    private String name;
-    private int distanceTraveled = 0;
-    private int speed = 100;
     private int minimumSlow = 5;
-    private String type = "motorcycle";
     Motorcycle(){
+        type = "motor";
+        speed = 100;
+
         nameNumber++;
         name = "Motorcycle " + nameNumber;
     }

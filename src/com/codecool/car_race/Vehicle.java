@@ -1,13 +1,26 @@
 package com.codecool.car_race;
-import java.util.Random;
 
-public interface Vehicle {
-    void moveForAnHour(Race race);
+ class Vehicle {
+     int getDistanceTraveled() {
+         return distanceTraveled;
+     }
 
-    String getName();
 
-    String getType();
+     String getName() {
+         return name;
+     }
 
-    int getDistanceTraveled();
+
+     String getType() {
+         return type;
+     }
+     void moveForAnHour(Race race){}
+     int distanceTraveled = 0;
+     String name;
+     String type;
+     int speed;
+
+
+
 
 }

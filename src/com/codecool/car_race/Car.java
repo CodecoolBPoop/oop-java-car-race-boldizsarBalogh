@@ -3,27 +3,10 @@ import java.util.Random;
 
 
 
-public class Car implements Vehicle {
-    @Override
-    public int getDistanceTraveled() {
-        return distanceTraveled;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getType() {
-        return type;
-    }
+public class Car extends Vehicle {
 
 
-    private String name;
-    private int distanceTraveled = 0;
-    private int speed;
-    private String type = "car";
+
     private String[] carNames = {
             "Purity",
             "Pinnacle",
@@ -36,6 +19,7 @@ public class Car implements Vehicle {
             "Prestige",
             "Vanish"};
     Car(){
+        type = "car";
         Random random = new Random();
         String firstName = carNames[random.nextInt(9)];
         String secondName = carNames[random.nextInt(9)];
